@@ -17,10 +17,6 @@ public class Game {
         return items.toArray(new Player[0]);
     }
 
-    public void removeById(int id) throws NotRegisteredException {
-        items.removeIf(el -> el.getId() == id);
-    }
-
     public int round(String playerName1, String playerName2) {
         Player player1 = findByName(playerName1);
         Player player2 = findByName(playerName2);
