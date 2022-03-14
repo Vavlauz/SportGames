@@ -6,10 +6,14 @@ import ru.netology.domain.domain.Player;
 import ru.netology.domain.exception.NotRegisteredException;
 
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class GameTest {
     private final Game players = new Game();
+    private final Player comparator = new Player();
     private final Player first = new Player(1, "SpiderMan", 500);
     private final Player second = new Player(2, "BatMan", 600);
     private final Player third = new Player(3, "SuperMan", 500);
@@ -22,6 +26,7 @@ class GameTest {
         players.register(second);
         players.register(third);
         players.register(fourth);
+
 
         assertEquals(first, players.findByName(first.getName()));
     }
@@ -46,9 +51,10 @@ class GameTest {
 
         Assertions.assertThrows(NotRegisteredException.class, () -> players.findByName("SpiderMan"));
 
-        Player[] expected = {first, fifth};
+        Player[] expected = {fifth, first};
         Player[] actual = players.findAll();
 
+        Arrays.sort(actual, comparator);
 
         assertArrayEquals(expected, actual);
     }
@@ -57,10 +63,12 @@ class GameTest {
     void shouldRegistered() {
         players.register(first);
         players.register(second);
-        players.register(third);
+        players.register(fourth);
 
-        Player[] expected = {first, second, third};
+        Player[] expected = {fourth, first, second};
         Player[] actual = players.findAll();
+
+        Arrays.sort(actual, comparator);
 
         assertArrayEquals(expected, actual);
     }
@@ -146,9 +154,10 @@ class GameTest {
 
         Assertions.assertThrows(NotRegisteredException.class, () -> players.round("Thor", "SpiderMan"));
 
-        Player[] expected = {second, third};
+        Player[] expected = {third, second};
         Player[] actual = players.findAll();
 
+        Arrays.sort(actual, comparator);
 
         assertArrayEquals(expected, actual);
     }
