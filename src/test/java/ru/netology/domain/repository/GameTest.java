@@ -7,7 +7,6 @@ import ru.netology.domain.exception.NotRegisteredException;
 
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 import static org.junit.jupiter.api.Assertions.*;
 
