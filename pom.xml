@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.netology.domain</groupId>
-    <artifactId>Tournament</artifactId>
+    <artifactId>SportGames</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
