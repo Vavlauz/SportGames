@@ -25,7 +25,6 @@ class GameTest {
         players.register(second);
         players.register(third);
 
-
         assertEquals(first, players.findByName(first.getName()));
     }
 
