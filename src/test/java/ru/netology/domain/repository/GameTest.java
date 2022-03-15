@@ -49,7 +49,7 @@ class GameTest {
 
         Assertions.assertThrows(NotRegisteredException.class, () -> players.findByName("SpiderMan"));
 
-        Player[] expected = {first, fifth};
+        Player[] expected = {fifth, first};
         Player[] actual = players.findAll();
 
 
