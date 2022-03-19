@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.function.Predicate;
 
 public class Game {
-    HashMap<Player, String> items = new HashMap<>();
+    private HashMap<Player, String> items = new HashMap<>();
 
     public void register(Player player) {
         items.put(player, player.getName());
