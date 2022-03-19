@@ -7,14 +7,15 @@ import java.util.*;
 import java.util.function.Predicate;
 
 public class Game {
-    private Collection<Player> items = new ArrayList<>();
+    private HashMap<Player, String> items = new HashMap<>();
 
     public void register(Player player) {
-        items.add(player);
+        items.put(player, player.getName());
     }
 
     public Player[] findAll() {
-        return items.toArray(new Player[0]);
+        Set<Player> keys = items.keySet();
+        return keys.toArray(new Player[0]);
     }
 
     public int round(String playerName1, String playerName2) {
